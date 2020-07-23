@@ -8,14 +8,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.23.2/vuedraggable.umd.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>ToDoリスト</title>
+	<title>ToDoリストissue2</title>
 </head>
 <body>
 	<div id="app">
 		<input type="text" v-model="addText" @keydown.enter="addToDo" 　placeholder="ToDoを入力">
-		<hr style="height: 1px; background-color:orange;">		
+		<hr style="height: 1px; background-color:orange;">
 		<draggable tag="div">
-			<div v-for="todo in list" :key="todo.id" v-if="todo.flg === true">	
+			<div v-for="todo in list" :key="todo.id" v-if="todo.flg === true">
 				<span class="comp_btn" @click="changeToDo(todo.id)">○</span>
 				<span class="todo" @click="editToDo(todo.id)">{{ todo.text }}</span>
 				<span @click="deleteToDo(todo.id)"><i class="far fa-trash-alt trash"></i></span>
@@ -30,6 +30,6 @@
 		</draggable>
 	</div>
 	<script src="contents.js"></script>
-	
+
 </body>
 </html>
