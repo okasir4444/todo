@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+		integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.23.2/vuedraggable.umd.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>ToDoリスト</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="addText" @keydown.enter="addToDo" 　placeholder="ToDoを入力">
+		<hr style="height: 1px; background-color:orange;">		
+		<draggable tag="div">
+			<div v-for="todo in list" :key="todo.id" v-if="todo.flg === true">	
+				<span class="comp_btn" @click="changeToDo(todo.id)">○</span>
+				<span class="todo" @click="editToDo(todo.id)">{{ todo.text }}</span>
+				<span @click="deleteToDo(todo.id)"><i class="far fa-trash-alt trash"></i></span>
+			</div>
+		</draggable>
+		<draggable tag="div">
+			<div v-for="todo in list" v-if="todo.flg === false">
+				<span class="revert_btn" @click="changeToDo(todo.id)">●</span>
+				<span class="comp_todo">{{ todo.text }}</span>
+				<span @click="deleteToDo(todo.id)"><i class="far fa-trash-alt comp_trash"></i></span>
+			</div>
+		</draggable>
+	</div>
+	<script src="contents.js"></script>
+	
+</body>
+</html>

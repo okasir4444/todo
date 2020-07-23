@@ -1,0 +1,35 @@
+body{
+	background-color: rgb(94, 94, 94);
+}
+#app{
+	margin:150px auto;
+	padding:20px;
+	width: 200px;
+	background-image:url("white_wall.png");
+}
+.todo{
+	color:#5d5d5d;
+}
+.comp_btn,.revert_btn{
+	color:orange;
+}
+.comp_todo{
+	color:lightgray;
+}
+.comp_trash{
+	padding-top: 4px;
+	float: right;
+	color:lightgray;
+}
+.trash{
+	padding-top: 4px;
+	float: right;
+	color:gray;
+}
+input[type="text"] {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background: none;
+}
